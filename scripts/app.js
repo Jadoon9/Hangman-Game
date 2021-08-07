@@ -1,23 +1,16 @@
-const Hangman = function (word, remainingGuesses) {
-  this.word = word.toLowerCase().split("");
-  this.remainingGuesses = remainingGuesses;
-  this.guessedLetters = ["c"];
-};
+const game1 = new Hangman("Cat", 2);
+const puzzleEl = document.querySelector("#puzzle");
+const guessesEl = document.querySelector("#guesses");
 
-Hangman.prototype.getPuzzle = function () {
-  let puzzle = "";
-  this.word.forEach((letter) => {
-    if (this.guessedLetters.includes(letter) || letter === " ") {
-      puzzle += letter;
-    } else {
-      puzzle += "*";
-    }
-  });
-  return puzzle;
-};
+puzzleEl.textContent = game1.getPuzzle();
 
-const hangman1 = new Hangman("Cat", 2);
-console.log(hangman1.getPuzzle());
+guessesEl.textContent = `You have ${game1.remainingGuesses} guesses remaining.`;
 
-const hangman2 = new Hangman("lion", 3);
-console.log(hangman2.getPuzzle());
+window.addEventListener("keypress", (e) => {
+  const guess = String.fromCharCode(e.charCode);
+  game1.makeGuess(guess);
+
+  game1.getPuzzle();
+  puzzleEl.textContent = game1.getPuzzle();
+  guessesEl.textContent = `You have ${game1.remainingGuesses} guesses remaining.`;
+});
