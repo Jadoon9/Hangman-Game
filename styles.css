@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: #181620;
+  color: white;
+}
+
+.heading,
+.game {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.heading {
+  font-size: 40px;
+  height: 30%;
+  text-align: center;
+  padding: 10px;
+}
+
+.heading p {
+  font-size: 30px;
+}
+.game {
+  font-size: 20px;
+  margin: 50px;
+  text-align: center;
+}
+#puzzle {
+  margin: 20px;
+}
+.resetButton button {
+  cursor: pointer;
+  height: 50px;
+  width: 200px;
+  margin: 15px;
+  border-radius: 20px;
+}

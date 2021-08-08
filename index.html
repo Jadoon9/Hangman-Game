@@ -8,10 +8,20 @@
     <title>Hangman Game</title>
   </head>
   <body>
-    <h1>Hangman Game</h1>
-    <p id="puzzle"></p>
-    <p id="guesses"></p>
-    <button id="resetButton">Reset</button>
+    <div class="heading">
+      <h1>Hangman Game</h1>
+      <p>Guess The Letter</p>
+    </div>
+
+    <div class="game">
+      <p id="puzzle"></p>
+      <p id="guesses"></p>
+    </div>
+
+    <div class="resetButton">
+      <button id="resetButton">Reset</button>
+    </div>
+
     <script src="./scripts/requests.js"></script>
     <script src="./scripts/hangman.js"></script>
     <script src="./scripts/app.js"></script>
